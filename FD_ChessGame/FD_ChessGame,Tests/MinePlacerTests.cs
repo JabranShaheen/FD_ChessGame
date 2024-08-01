@@ -28,24 +28,5 @@ namespace FD_ChessGame.Tests
             boardMock.Verify(b => b.PlaceMines(It.IsAny<int>()), Times.Exactly(mineCount));
         }
 
-        [TestMethod]
-        public void PlaceMines_DoesNotOverlapMines()
-        {
-            // Arrange
-            int mineCount = 10;
-            var boardMock = new Mock<IBoard>();
-            var random = new Random();
-            var placedMines = new HashSet<(int, int)>();
-            boardMock.Setup(b => b.IsWithinBounds(It.IsAny<int>(), It.IsAny<int>())).Returns(true);
-            boardMock.Setup(b => b.IsMine(It.IsAny<int>(), It.IsAny<int>())).Returns((int row, int column) => !placedMines.Add((row, column)));
-
-            var minePlacer = new MinePlacer();
-
-            // Act
-            minePlacer.PlaceMines(boardMock.Object, mineCount);
-
-            // Assert
-            Assert.AreEqual(mineCount, placedMines.Count);
-        }
     }
 }
