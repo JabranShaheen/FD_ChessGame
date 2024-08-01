@@ -45,12 +45,12 @@ namespace FD_ChessGame.Implementations
 
         public bool IsGameOver()
         {
-            return _landminesHit > 2 || Player.Position.Row == 0;
+            return _landminesHit > 2 || Player.Position.Row == Board.Size -1;
         }
 
         public bool IsGameWon()
         {
-            return Player.Position.Row == 0 && _landminesHit <= 2;
+            return Player.Position.Row == 7 && _landminesHit <= 2;
         }
     }
 }

@@ -66,7 +66,7 @@ namespace FD_ChessGame.Tests
         public void IsGameWon_ReturnsTrue_WhenPlayerReachesTopWithoutTooManyLandmines()
         {
             // Arrange
-            var playerPosition = new Position(0, 0);
+            var playerPosition = new Position(7, 0);
             _mockPlayer.Setup(p => p.Position).Returns(playerPosition);
             _mockBoard.Setup(b => b.IsMine(It.IsAny<int>(), It.IsAny<int>())).Returns(false);
 
