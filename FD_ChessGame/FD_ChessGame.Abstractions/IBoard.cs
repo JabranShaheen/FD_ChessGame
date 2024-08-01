@@ -6,5 +6,6 @@
         void PlaceMines(int mineCount);
         bool IsMine(int row, int column);
         bool IsWithinBounds(int row, int column);
+        void InitializeMines(int mineCount);
     }
 }
