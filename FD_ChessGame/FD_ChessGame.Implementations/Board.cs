@@ -37,5 +37,12 @@ namespace FD_ChessGame.Implementations
         {
             PlaceMines(mineCount);
         }
+        public void SetMine(int row, int column)
+        {
+            if (!IsWithinBounds(row, column))
+                throw new ArgumentOutOfRangeException("Position out of bounds.");
+
+            _mines[row, column] = true;
+        }
     }
 }

@@ -40,13 +40,42 @@ namespace FD_ChessGame.Tests
         {
             // Arrange
             int mineCount = 10;
-            var mockBoard = new Mock<IBoard>();
 
             // Act
             _board.InitializeMines(mineCount);
 
             // Assert
             _mockMinePlacer.Verify(mp => mp.PlaceMines(_board, mineCount), Times.Once);
+        }
+
+        [TestMethod]
+        public void SetMine_SetsMineAtSpecifiedLocation()
+        {
+            // Arrange
+            int row = 2;
+            int column = 3;
+
+            // Act
+            _board.SetMine(row, column);
+
+            // Assert
+            Assert.IsTrue(_board.IsMine(row, column));
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void SetMine_ThrowsException_WhenOutOfBounds_Row()
+        {
+            // Act
+            _board.SetMine(-1, 0); // Invalid row
+        }
+
+        [TestMethod]
+        [ExpectedException(typeof(ArgumentOutOfRangeException))]
+        public void SetMine_ThrowsException_WhenOutOfBounds_Column()
+        {
+            // Act
+            _board.SetMine(0, -1); // Invalid column
         }
 
         [TestMethod]
