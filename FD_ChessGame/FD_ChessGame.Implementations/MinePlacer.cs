@@ -18,7 +18,7 @@ namespace FD_ChessGame.Implementations
 
                 if (board.IsWithinBounds(row, column) && !board.IsMine(row, column))
                 {
-                    board.PlaceMines(mineCount); // Assuming this method places the mines at specified locations
+                    board.SetMine(row, column);
                     placedMines++;
                 }
             }
