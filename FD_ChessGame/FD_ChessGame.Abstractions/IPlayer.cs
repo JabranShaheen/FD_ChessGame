@@ -2,7 +2,7 @@
 {
     public interface IPlayer
     {
-        IPosition Position { get; }
+        Position Position { get; }
         void MoveUp();
         void MoveDown();
         void MoveLeft();

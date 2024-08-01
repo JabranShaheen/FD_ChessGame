@@ -6,4 +6,8 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <ProjectReference Include="..\FD_ChessGame.Abstractions\FD_ChessGame.Abstractions.csproj" />
+  </ItemGroup>
+
 </Project>
