@@ -1,32 +1,48 @@
 ﻿using FD_ChessGame.Abstractions;
 
-public class Player : IPlayer
+namespace FD_ChessGame.Implementations
 {
-    public Position Position { get; private set; }
-
-    public Player(Position startPosition)
+    public class Player : IPlayer
     {
-        Position = startPosition;
-    }
+        public Position Position { get; private set; }
+        private readonly int _boardSize;
 
-    public void MoveUp()
-    {
-    
-            Position.Row += 1;
-    }
+        public Player(Position startPosition, int boardSize)
+        {
+            Position = startPosition;
+            _boardSize = boardSize;
+        }
 
-    public void MoveDown()
-    {
-            Position.Row -= 1;
-    }
+        public void MoveUp()
+        {
+            if (Position.Row < _boardSize - 1)
+            {
+                Position.Row += 1;
+            }
+        }
 
-    public void MoveLeft()
-    {
-            Position.Column -= 1;
-    }
+        public void MoveDown()
+        {
+            if (Position.Row > 0)
+            {
+                Position.Row -= 1;
+            }
+        }
 
-    public void MoveRight()
-    {
-            Position.Column += 1;
+        public void MoveLeft()
+        {
+            if (Position.Column > 0)
+            {
+                Position.Column -= 1;
+            }
+        }
+
+        public void MoveRight()
+        {
+            if (Position.Column < _boardSize - 1)
+            {
+                Position.Column += 1;
+            }
+        }
     }
 }

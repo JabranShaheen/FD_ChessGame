@@ -12,7 +12,7 @@ namespace FD_ChessGame.Tests
         {
             // Arrange
             var position = new Position(7, 0); // Starting at the bottom-left corner
-            IPlayer player = new Player(position);
+            IPlayer player = new Player(position, 7);
 
             // Act
             var pos = player.Position;
@@ -27,7 +27,7 @@ namespace FD_ChessGame.Tests
         {
             // Arrange
             var position = new Position(0, 0); // Starting position
-            IPlayer player = new Player(position);
+            IPlayer player = new Player(position,7);
 
             // Act
             player.MoveUp();
@@ -42,7 +42,7 @@ namespace FD_ChessGame.Tests
         {
             // Arrange
             var position = new Position(6, 0);
-            IPlayer player = new Player(position);
+            IPlayer player = new Player(position, 7);
             player.MoveUp(); // Move up first to test moving down
 
             // Act
@@ -58,7 +58,7 @@ namespace FD_ChessGame.Tests
         {
             // Arrange
             var position = new Position(6, 1);
-            IPlayer player = new Player(position);
+            IPlayer player = new Player(position, 7);
             player.MoveRight(); // Move right first to test moving left
 
             // Act
@@ -74,7 +74,7 @@ namespace FD_ChessGame.Tests
         {
             // Arrange
             var position = new Position(6, 1);
-            IPlayer player = new Player(position);
+            IPlayer player = new Player(position, 7);
 
             // Act
             player.MoveRight();
