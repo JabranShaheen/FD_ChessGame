@@ -2,9 +2,10 @@
 {
     public interface IGame
     {
-        void Start();
-        void MovePlayer(char direction);
-        bool IsGameOver { get; }
-        bool IsGameWon { get; }
+        IPlayer Player { get; }
+        IBoard Board { get; }
+        void MovePlayer(string direction);
+        bool IsGameOver();
+        bool IsGameWon();
     }
 }
