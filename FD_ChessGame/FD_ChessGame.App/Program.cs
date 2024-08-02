@@ -50,7 +50,7 @@ namespace FD_ChessGame.App
         private static void DisplayGameStatus(IPlayer player, IBoard board)
         {
             Console.Clear();
-            Console.WriteLine("Current Board: Just for testing logic");
+            Console.WriteLine("Current Board: Just for testing logic; mines are displayed.");
 
             for (int row = board.Size - 1; row >= 0; row--)
             {

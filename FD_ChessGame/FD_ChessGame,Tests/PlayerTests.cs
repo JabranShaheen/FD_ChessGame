@@ -41,7 +41,7 @@ namespace FD_ChessGame.Tests
         public void Player_Can_Move_Down()
         {
             // Arrange
-            var position = new Position(6, 0);
+            var position = new Position(0, 0);
             IPlayer player = new Player(position, 7);
             player.MoveUp(); // Move up first to test moving down
 
@@ -49,7 +49,7 @@ namespace FD_ChessGame.Tests
             player.MoveDown();
 
             // Assert
-            Assert.AreEqual(6, position.Row); // Move down should return to the original row
+            Assert.AreEqual(0, position.Row); // Move down should return to the original row
             Assert.AreEqual(0, position.Column); // No change in column
         }
 
