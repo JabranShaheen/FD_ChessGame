@@ -5,6 +5,10 @@
 ## Unit Tests
 <img width="372" alt="image" src="https://github.com/user-attachments/assets/c9c18492-748e-4cf3-a8be-4bcad63a15f7">
 
+## Console Application 
+<img width="439" alt="image" src="https://github.com/user-attachments/assets/d1d1983a-d428-4026-b205-71f2c4a60515">
+
+
 ## Test-Driven Development (TDD)
 The development of the FD Chess Game followed the principles of Test-Driven Development:
 
